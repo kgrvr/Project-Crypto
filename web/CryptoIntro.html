@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Project Crypto</title>
+        <link href='font-style.css' rel='stylesheet' type='text/css'>
+        <link href='base.css' rel='stylesheet' type='text/css'>
+        <link href='normalize.css' rel='stylesheet' type='text/css'>
+        <link href='style.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body class="body">
+        <div align = "center" class="top" >
+            <img src="orange-key-512.png" width="30" height="30" alt="icon"/>&nbsp;&nbsp;&nbsp;&nbsp;<h1 class="heading"><a href="index.html"><b>Project Crypto</b></a></h1>
+
+            <list class="headingList">
+            <ul class="horizontal-list" style="padding-left: 0px;">
+                <li><a class="link" href="/Crypto">Home</a></li>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="link" href="history.jsp">History</a></li>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="link" href="CryptoIntro.html">Cryptography</a></li>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="link" href="AboutProject.html">About Project</a></li>
+            </ul>
+            </list>
+
+        </div>
+        <div class="form" >
+
+            <h1 id="header">Cryptography</h1>
+            
+            <p align="justify"><b>Cryptography</b> referred almost exclusively to encryption, which is the process of converting ordinary information (called plaintext) into unintelligible text (called ciphertext). <br />
+                <br /><b>Decryption</b> is the reverse, in other words, moving from the unintelligible ciphertext back to plaintext.<br /> <br /> A cipher (or cypher) is a pair of algorithms that create the encryption and the reversing decryption. The detailed operation of a cipher is controlled both by the algorithm and in each instance by a "key". The key is a secret (ideally known only to the communicants), usually a short string of characters, which is needed to decrypt the ciphertext.</p><br />
+            
+            
+            <h1 id="header">Cryptography Techniques</h1>
+            
+            <p style="font-size: 130%">1. &nbsp;<u>Caesar Cipher</u>:</p>
+            <center><img src="caesar.png" alt="Caesar Cipher" style="width: 70%; height: 70%;"/></center>
+            
+            <p align="justify">In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. <br /><br />The method is named after <b>Julius Caesar</b>, who used it in his private correspondence.</p>
+            
+            <hr />
+            
+            <p style="font-size: 130%">2. &nbsp;<u>Vernam Cipher</u>:</p>
+            <center><img src="vernam.png" alt="Vernam Cipher" style="width: 70%; height: 70%;"/></center>
+            
+            <p align="justify">In cryptography, the Vername Cipher or one-time pad (OTP) is an encryption technique that cannot be cracked if used correctly. In this technique, a plaintext is paired with a random secret key (also referred to as a one-time pad). Then, each bit or character of the plaintext is encrypted by combining it with the corresponding bit or character from the pad using modular addition. If the key is truly random, is at least as long as the plaintext, is never reused in whole or in part, and is kept completely secret, then the resulting ciphertext will be impossible to decrypt or break.</p>
+            
+            <hr />
+
+            <p style="font-size: 130%">3. &nbsp;<u>Hill Cipher</u>:</p>
+            <center><img src="hill.jpg" alt="Hill Cipher" style="width: 70%; height: 70%;"/></center>
+            
+            <p align="justify">In classical cryptography, the Hill cipher is a polygraphic substitution cipher based on linear algebra. Invented by Lester S. Hill in 1929, it was the first polygraphic cipher in which it was practical (though barely) to operate on more than three symbols at once. <br><br> 
+                Each letter is represented by a number modulo 26. Often the simple scheme A = 0, B = 1, ..., Z = 25 is used, but this is not an essential feature of the cipher. To encrypt a message, each block of n letters (considered as an n-component vector) is multiplied by an invertible n × n matrix, again modulus 26. To decrypt the message, each block is multiplied by the inverse of the matrix used for encryption.</p>
+ 
+            <hr />
+            
+            <p style="font-size: 130%">4. &nbsp;<u>PlayFair Cipher</u>:</p>
+            <center><img src="playfair.jpg" alt="PlayFair Cipher" style="width: 70%; height: 70%;"/></center>
+            
+            <p align="justify">The Playfair cipher or Playfair square or Wheatstone-Playfair cipher or Wheatstone cipher is a manual symmetric encryption technique and was the first literal digram substitution cipher. The scheme was invented in 1854 by Charles Wheatstone, but bears the name of Lord Playfair who promoted the use of the cipher. <br/><br/>
+
+The technique encrypts pairs of letters (bigrams or digrams), instead of single letters as in the simple substitution cipher and rather more complex Vigenère cipher systems then in use. The Playfair is thus significantly harder to break since the frequency analysis used for simple substitution ciphers does not work with it. The frequency analysis of bigrams is possible, but considerably more difficult. With 600 possible bigrams rather than the 26 possible monograms (single symbols, usually letters in this context), a considerably larger cipher text is required in order to be useful.</p>
+            
+        </div> <!-- /form -->
+        <script src='jquery.min.js'></script>
+        <script src='index.js'></script>
+
+    </body>
+</html>

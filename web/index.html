@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Project Crypto</title>
+        <link href='font-style.css' rel='stylesheet' type='text/css'>
+        <link href='base.css' rel='stylesheet' type='text/css'>
+        <link href='normalize.css' rel='stylesheet' type='text/css'>
+        <link href='style.css' rel='stylesheet' type='text/css'>
+        <script type="text/javascript"> 
+            function changeHeading() {
+                var type = document.getElementById("encryption-type").value;
+                switch (type) {
+                    case "caesar" :
+                        document.getElementById("header").innerHTML = "Caeser Cipher";
+                        document.getElementById("keyTextLabel").innerHTML = "Shift Counter";
+                        document.getElementById("keyTextInput").type = "number";
+                        document.getElementById("keyTextInput").value = null;
+                        document.getElementById("keyMatrixDiv").style.display = 'none';
+                        document.getElementById("keyTextDiv").style.display = 'block';
+                        document.getElementById("autoGenKeyDiv").style.display = 'none';
+                        break;
+                    case "vernam" :
+                        document.getElementById("header").innerHTML = "Vernam Cipher";
+                        document.getElementById("keyTextLabel").innerHTML = "Key";
+                        document.getElementById("keyTextInput").type = "password";
+                        document.getElementById("keyTextInput").value = null;
+                        document.getElementById("keyMatrixDiv").style.display = 'none';
+                        document.getElementById("keyTextDiv").style.display = 'block';
+                        document.getElementById("autoGenKeyDiv").style.display = 'none';
+                        break;
+                    case "playfair" :
+                        document.getElementById("header").innerHTML = "PlayFair Cipher";
+                        document.getElementById("keyTextLabel").innerHTML = "Key";
+                        document.getElementById("keyTextInput").type = "password";
+                        document.getElementById("keyTextInput").value = null;
+                        document.getElementById("keyMatrixDiv").style.display = 'none';
+                        document.getElementById("keyTextDiv").style.display = 'block';
+                        document.getElementById("autoGenKeyDiv").style.display = 'none';
+                        break;
+                    case "hill" :
+                        document.getElementById("header").innerHTML = "Hill Cipher";
+                        document.getElementById("keyMatrixDiv").style.display = 'block';
+                        document.getElementById("keyTextDiv").style.display = 'none';
+                        document.getElementById("keyTextInput").value = null;
+                        document.getElementById("autoGenKeyDiv").style.display = 'block';
+                        break;
+                    default :
+                        document.getElementById("header").innerHTML = "Encryption";
+                        document.getElementById("keyTextLabel").innerHTML = "Key";
+                        document.getElementById("keyTextInput").type = "password";
+                        document.getElementById("keyTextInput").value = null;
+                        document.getElementById("keyMatrixDiv").style.display = 'none';
+                        document.getElementById("keyTextDiv").style.display = 'block';
+                        document.getElementById("autoGenKeyDiv").style.display = 'none';
+                        break;
+                }
+            }
+            function checkedChange() {
+                document.getElementById("autoGenKeyInput").checked ? 
+                        document.getElementById("keyMatrixDiv").style.display = 'none' : 
+                        document.getElementById("keyMatrixDiv").style.display = 'block';
+            }
+            function changeHeading2() {
+                var type = document.getElementById("decryption-type").value;
+                switch (type) {
+                    case "caesar" :
+                        document.getElementById("header2").innerHTML = "Caeser Cipher";
+                        document.getElementById("decKeyTextLabel").innerHTML = "Shift Counter";
+                        document.getElementById("decKeyTextInput").type = "number";
+                        document.getElementById("decKeyTextInput").value = null;
+                        document.getElementById("decKeyMatrixDiv").style.display = 'none';
+                        document.getElementById("decKeyTextDiv").style.display = 'block';
+                        break;
+                    case "vernam" :
+                        document.getElementById("header2").innerHTML = "Vernam Cipher";
+                        document.getElementById("decKeyTextLabel").innerHTML = "Key";
+                        document.getElementById("decKeyTextInput").type = "password";
+                        document.getElementById("decKeyTextInput").value = null;
+                        document.getElementById("decKeyMatrixDiv").style.display = 'none';
+                        document.getElementById("decKeyTextDiv").style.display = 'block';
+                        break;
+                    case "playfair" :
+                        document.getElementById("header2").innerHTML = "PlayFair Cipher";
+                        document.getElementById("decKeyTextLabel").innerHTML = "Key";
+                        document.getElementById("decKeyTextInput").type = "password";
+                        document.getElementById("decKeyTextInput").value = null;
+                        document.getElementById("decKeyMatrixDiv").style.display = 'none';
+                        document.getElementById("decKeyTextDiv").style.display = 'block';
+                        break;
+                    case "hill" :
+                        document.getElementById("header2").innerHTML = "Hill Cipher";
+                        document.getElementById("decKeyMatrixDiv").style.display = 'block';
+                        document.getElementById("decKeyTextDiv").style.display = 'none';
+                        document.getElementById("keyTextInput").value = null;
+                        break;
+                    default :
+                        document.getElementById("header2").innerHTML = "Decryption";
+                        document.getElementById("decKeyTextLabel").innerHTML = "Key";
+                        document.getElementById("decKeyTextInput").type = "password";
+                        document.getElementById("decKeyTextInput").value = null;
+                        document.getElementById("decKeyMatrixDiv").style.display = 'none';
+                        document.getElementById("decKeyTextDiv").style.display = 'block';
+                        break;
+                }
+            }
+        </script>
+    </head>
+    <body class="body">
+        <div align = "center" class="top" >
+            <img src="orange-key-512.png" width="30" height="30" alt="icon"/>&nbsp;&nbsp;&nbsp;&nbsp;<h1 class="heading"><a href="index.html"><b>Project Crypto</b></a></h1>
+
+            <list class="headingList">
+            <ul class="horizontal-list" style="padding-left: 0px;">
+                <li><a class="link" href="/Crypto">Home</a></li>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="link" href="history.jsp">History</a></li>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="link" href="CryptoIntro.html">Cryptography</a></li>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="link" href="AboutProject.html">About Project</a></li>
+            </ul>
+            </list>
+
+        </div>
+        <div class="form">
+
+            <ul class="tab-group">
+                <li class="tab active"><a href="#signup">Encrypt</a></li>
+                <li class="tab"><a href="#login">Decrypt</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="signup">   
+                    <h1 id="header">Encryption</h1>
+
+                    <form action="GenerateCipher.jsp" method="post">
+                        
+                        <div class="field-wrap">
+                            <label>
+                                Your ID<span class="req">*</span>
+                            </label>
+                            <input type="email" id="userId" name="userId" required autocomplete="off"/>
+                        </div>
+
+                        <div class="field-wrap">
+                            <label>
+                                Plain Text<span class="req">*</span>
+                            </label>
+                            <input type="text" id="plainText" name="plainText" required autocomplete="off"/>
+                        </div>
+
+                        <div class="top-row">
+                            <div class="field-wrap" style="width:45%;">
+                                <label class="field-wrap-no-translation">
+                                    Encryption Technique:<span class="req">*</span>
+                                </label>
+                            </div>
+
+                            <div class="field-wrap">
+                                <select name="encryption-type" id="encryption-type" class="encryption-type" onchange="changeHeading()">
+                                    <option value="default">Select..</option>
+                                    <optgroup label="Substitution Scheme" />
+                                    <option value="caesar">Caeser Cipher</option>
+                                    <option value="vernam">Vernam Cipher</option>
+                                    <optgroup label="Transposition Scheme" />
+                                    <option value="playfair">PlayFair Cipher</option>
+                                    <option value="hill">Hill Cipher</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="keyTextDiv" class="field-wrap">
+                            <label id="keyTextLabel">
+                                Key<span class="req">*</span>
+                            </label>
+                            <input type="password" id="keyTextInput" name="keyText" autocomplete="off"/>
+                        </div>
+
+                        <div id="autoGenKeyDiv" class="field-wrap" hidden>
+                            <div style="float: left" >
+                            <input type="checkbox" id="autoGenKeyInput" name="autoGenKey" onchange="checkedChange()" />
+                            </div>
+                            <div style="float: right">
+                            <label id="autoGenKeyLabel" style="font-size: 15px;" for="autoGenKeyInput" class="checkbox-label">
+                                &nbsp;&nbsp;&nbsp;&nbsp;Use Auto-Generated Key Matrix
+                            </label>
+                            </div>
+                        </div>
+
+                        <div id="keyMatrixDiv" class="field-wrap" hidden>
+                            <label id="keyMatrixLabel">
+                                Key Matrix<span class="req">*</span>
+                            </label><br/><br/>
+                            <table>
+                                <tr>
+                                    <td><input type="number" name="matrix[0][0]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[0][1]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[0][2]" style="text-align: center" value="" /> </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" name="matrix[1][0]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[1][1]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[1][2]" style="text-align: center" value="" /> </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" name="matrix[2][0]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[2][1]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[2][2]" style="text-align: center" value="" /> </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="submit"  name="act" value="encrypt" class="button button-block">Encrypt</button>
+
+                    </form>
+
+                </div>
+
+                <div id="login">   
+                    <h1 id="header2">Decryption</h1>
+
+                    <form action="GenerateCipher.jsp" method="post">
+                        
+                        <div class="field-wrap">
+                            <label>
+                                Your ID<span class="req">*</span>
+                            </label>
+                            <input type="email" id="userId" name="userId" required autocomplete="off"/>
+                        </div>
+
+                        <div class="field-wrap">
+                            <label>
+                                Cipher Text<span class="req">*</span>
+                            </label>
+                            <input type="text" id="cipherText" name="cipherText" required autocomplete="off"/>
+                        </div>
+
+                        <div class="top-row">
+                            <div class="field-wrap" style="width:45%;">
+                                <label>
+                                    Decryption Technique:<span class="req">*</span>
+                                </label>
+                            </div>
+
+                            <div class="field-wrap">
+                                <select name="decryption-type" id="decryption-type" class="decryption-type" onchange="changeHeading2()">
+                                    <option value="default">Select..</option>
+                                    <optgroup label="Substitution Scheme" />
+                                    <option value="caesar">Caeser Cipher</option>
+                                    <option value="vernam">Vernam Cipher</option>
+                                    <optgroup label="Transposition Scheme" />
+                                    <option value="playfair">PlayFair Cipher</option>
+                                    <option value="hill">Hill Cipher</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="field-wrap" id="decKeyTextDiv">
+                            <label id="decKeyTextLabel">
+                                Key<span class="req">*</span>
+                            </label>
+                            <input type="password" id="decKeyTextInput" name="decKeyTextInput" autocomplete="off"/>
+                        </div>
+                        
+                        <div id="decKeyMatrixDiv" class="field-wrap" hidden>
+                            <label id="decKeyMatrixLabel">
+                                Key Matrix<span class="req">*</span>
+                            </label><br/><br/>
+                            <table>
+                                <tr>
+                                    <td><input type="number" name="matrix[0][0]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[0][1]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[0][2]" style="text-align: center" value="" /> </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" name="matrix[1][0]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[1][1]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[1][2]" style="text-align: center" value="" /> </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" name="matrix[2][0]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[2][1]" style="text-align: center" value="" /> </td>
+                                    <td><input type="number" name="matrix[2][2]" style="text-align: center" value="" /> </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                        <button type="submit" name="act" value="decrypt" class="button button-block"/>Decrypt</button>
+
+                    </form>
+
+                </div>
+
+            </div><!-- tab-content -->
+
+        </div> <!-- /form -->
+        <script src='jquery.min.js'></script>
+        <script src='index.js'></script>
+
+    </body>
+</html>

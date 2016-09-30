@@ -1,0 +1,89 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20 Sep, 2016, 6:08:59 PM
+    Author     : kush
+*/
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    font-size: 17px;
+    list-style-type: none;
+}
+.htable {
+    color: #fff;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.htr:hover {
+    background-color: #CD7213;
+}
+.hth {
+    background-color: #CD7213;
+    height: 50px;
+    text-align: left;
+}
+.htd {
+    height: 40px;
+    vertical-align: central;
+    text-align: left;
+    word-wrap: break-word;
+}
+.hth, .htd {
+    padding-left: 5px;
+    border-bottom: 1px solid #ddd;
+}
+input[type="checkbox"]{
+  width: 20px; 
+  height: 20px; 
+  margin-left: 5px;
+}
+.checkbox-label {
+ padding:10px;
+ margin:0 0 10px;
+}
+
+.body {
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+}
+.top {
+    background-size: cover;
+    background-color: #16253D/*rgba(19, 35, 47, 0.9)*/;
+    align-items:  center;
+    vertical-align: central;
+    overflow:auto;
+    height: 140px;
+    padding-top: 10px;
+}
+.p {
+    color: black;
+    margin-top: 50px;
+}
+.heading { 
+    display: inline;
+    text-align:center;
+    font-size: 40px;
+    color: #CD7213;
+}
+.headingList {
+    text-align:center;
+    display: table;
+    box-sizing: border-box;
+}
+
+.horizontal-list {
+    display: flex;
+
+}
+.link {
+    color: white;
+    text-decoration: none;
+}
