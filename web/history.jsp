@@ -63,20 +63,29 @@
                     </label>
                     <input type="email" id="userId" name="userId" required autocomplete="off"/>
                 </div>
-                <center><button type="submit"  name="act" value="check" style="height: 30px; width: 100px;">Check</button></center>
+                <center><button type="submit"  name="act" value="check" class="checkButton">Check</button></center>
             </form>
 
             <br/><br/>
-
-            <table width="100%" class="htable">
-                <caption style="font-size: 20px">Encryption</caption>
+            
+                <%
+                        MySqlDatabaseConnector sql = new MySqlDatabaseConnector("jdbc:mysql://localhost:3306/", "crypto", "root", "shiv1994kush");
+                        String userId = request.getParameter("userId");
+                        int eCount = sql.getTupleCount(userId, "e");
+                        request.setAttribute("eCount", eCount);
+                        int dCount = sql.getTupleCount(userId, "d");
+                        request.setAttribute("dCount", dCount);
+                %>
+                
+                <c:if test="${eCount ne 0}">
+                
+            <table width="100%" class="htable" >
+                <caption style="font-size: 20px"><b>Encryption</b></caption>
                 <th class="hth">Text</th>
                 <th class="hth">Technique</th>
                 <th class="hth">Converted Text</th>
                     <%
-                        MySqlDatabaseConnector sql = new MySqlDatabaseConnector("jdbc:mysql://localhost:3306/", "crypto", "root", "shiv1994kush");
                         try {
-                            String userId = request.getParameter("userId");
                             ResultSet r = sql.getAllEncryptionTuples(userId);
                             while (r.next()) {
                     %>
@@ -100,18 +109,17 @@
                 %>
 
             </table>
+                </c:if>
             <br/>
-            <br/>
-
-
+            
+            <c:if test="${dCount ne 0}">
             <table width="100%" class="htable">
-                <caption style="font-size: 20px">Decryption</caption>
+                <caption style="font-size: 20px"><b>Decryption</b></caption>
                 <th class="hth">Text</th>
                 <th class="hth">Technique</th>
                 <th class="hth">Converted Text</th>
                     <%
                         try {
-                            String userId = request.getParameter("userId");
                             ResultSet r = sql.getAllDecryptionTuples(userId);
                             while (r.next()) {
                     %>
@@ -135,6 +143,7 @@
                 %>
 
             </table>
+                </c:if>
         </div> <!-- /form -->
         <script src='jquery.min.js'></script>
         <script src='index.js'></script>

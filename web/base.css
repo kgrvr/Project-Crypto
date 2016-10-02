@@ -17,6 +17,29 @@ ul {
     font-size: 17px;
     list-style-type: none;
 }
+.checkButton {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: larger;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: /*#1ab188*/#CD7213;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  width: 40%;
+}
+.checkButton:hover {
+    background:#EFB509; 
+}
+.htable:hover{
+    border-style: dashed;
+    border-width: 0.5px;
+}
 .htable {
     color: #fff;
     border-collapse: collapse;
@@ -25,8 +48,13 @@ ul {
 .htr:hover {
     background-color: #CD7213;
 }
+.htr{
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
 .hth {
-    background-color: #CD7213;
+    background-color: #16253D;
     height: 50px;
     text-align: left;
 }

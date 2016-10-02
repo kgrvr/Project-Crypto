@@ -51,8 +51,8 @@
             <list class="headingList">
             <ul class="horizontal-list" style="padding-left: 0px;">
                 <li><a class="link" href="index.html">Home</a></li>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><a class="link" href="CryptoIntro.html">Cryptography</a></li>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
                 <li><a class="link" href="history.jsp">History</a></li>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="link" href="CryptoIntro.html">Cryptography</a></li>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
                 <li><a class="link" href="AboutProject.html">About Project</a></li>
             </ul>
             </list>

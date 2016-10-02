@@ -46,6 +46,19 @@ public class MySqlDatabaseConnector {
         return value;
     }
     
+    public int getTupleCount(String userId, String cED) {
+        ResultSet r = null;
+        int count = 0;
+        try{
+            r = statement.executeQuery("select COUNT(*) from history_details where user_id='" + userId + "' and c_ed = '" + cED + "';");
+            while(r.next())
+                count = r.getInt(1);
+        } catch(Exception e) {
+            System.err.println(e);
+        }
+        return count;
+    }
+    
     public ResultSet getAllTuples(String userId) {
         ResultSet r = null;
         try{
