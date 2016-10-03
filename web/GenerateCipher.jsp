@@ -228,7 +228,7 @@
                 <div class="field-wrap" style="width: 87%;">
 
                     <c:choose>
-                        <c:when test="${type != 'h'}">
+                        <c:when test="${type != 'h'.charAt(0)}">
                             <input type="password" disabled="true" id="plainText" name="plainText"  value="<%=key%>"/>
                         </div>
                         <button type="button" style="background: transparent; border: transparent; float: right;" onclick="showHide()" id="eye">
